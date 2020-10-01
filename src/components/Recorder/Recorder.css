@@ -14,6 +14,15 @@
   width: 60px;
 }
 
+.recorder-record:focus {
+  outline: none;
+}
+
+.recorder-record:hover {
+  transform: scale(1.1);
+  transition: all 0.3s ease;
+}
+
 .recorder-record span {
   background: #f25042;
   border-radius: 50%;
@@ -28,12 +37,13 @@
   border-radius: 0;
   height: 22px;
   width: 22px;
+  box-shadow: 0px 0px 13px 10px rgba(221, 141, 141, 0.15);
 }
 
 .recorder-counter {
   margin: 0 0 0 15px;
   text-align: center;
-  width: 80px;
+  width: 100px;
   opacity: 0.5;
   transition: opacity 0.3s ease-out;
 }

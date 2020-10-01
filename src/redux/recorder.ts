@@ -1,5 +1,5 @@
 import { Action } from 'redux';
-import { start } from 'repl';
+import { RootState } from './store';
 
 interface RecorderState {
   dateStart: string;
@@ -17,6 +17,13 @@ export const start = () => ({
 export const stop = () => ({
   type: STOP,
 });
+
+export const selectRecorderStart = (rootState: RootState) => {
+  return rootState.recorder;
+};
+export const selectDateStart = (rootState: RootState) => {
+  return selectRecorderStart(rootState).dateStart;
+};
 
 const initialState: RecorderState = {
   dateStart: '',
