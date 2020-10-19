@@ -5,7 +5,7 @@ import recorderReducer from './recorder';
 
 const rootReducer = combineReducers({
   userEvents: userEventsReducer,
-  recorder: recorderReducer,
+  recorder: recorderReducer
 });
 
 export type RootState = ReturnType<typeof rootReducer>;

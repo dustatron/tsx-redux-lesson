@@ -39,7 +39,7 @@ export const loadUserEvents = (): ThunkAction<
   LoadReaquestAction | LoadSuccessAction | LoadFailureAction
 > => async (dispatch, getState) => {
   dispatch({
-    type: LOAD_REQUEST,
+    type: LOAD_REQUEST
   });
 
   try {
@@ -48,12 +48,12 @@ export const loadUserEvents = (): ThunkAction<
 
     dispatch({
       type: LOAD_SUCCESS,
-      payload: { events },
+      payload: { events }
     });
   } catch (e) {
     dispatch({
       type: LOAD_FAILURE,
-      error: 'Failed to load events.',
+      error: 'Failed to load events.'
     });
   }
 };
@@ -62,12 +62,12 @@ const selectUserEventsState = (rootState: RootState) => rootState.userEvents;
 
 export const selectUserEventsArray = (rootState: RootState) => {
   const state = selectUserEventsState(rootState);
-  return state.allIds.map((id) => state.byIds[id]);
+  return state.allIds.map(id => state.byIds[id]);
 };
 
 const initialState: UserEventsState = {
   byIds: {},
-  allIds: [],
+  allIds: []
 };
 
 const userEventsReducer = (
@@ -83,7 +83,7 @@ const userEventsReducer = (
         byIds: events.reduce<UserEventsState['byIds']>((byIds, event) => {
           byIds[event.id] = event;
           return byIds;
-        }, {}),
+        }, {})
       };
 
     default:
